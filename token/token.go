@@ -1,4 +1,4 @@
-package monkey
+package token
 
 type TokenType string
 
@@ -8,11 +8,16 @@ type Token struct {
 }
 
 var keywords = map[string]TokenType{
-	"fn":  FUNCTION,
-	"let": LET,
+	"fn":     FUNCTION,
+	"let":    LET,
+	"true":   TRUE,
+	"false":  FALSE,
+	"if":     IF,
+	"else":   ELSE,
+	"return": RETURN,
 }
 
-func lookupIdent(ident string) TokenType {
+func LookupIdent(ident string) TokenType {
 	if tok, ok := keywords[ident]; ok {
 		return tok
 	}
@@ -28,8 +33,17 @@ const (
 	INT   TokenType = "INT"   // 123123
 
 	// Operators
-	ASSIGN TokenType = "="
-	PLUS   TokenType = "+"
+	ASSIGN   TokenType = "="
+	PLUS     TokenType = "+"
+	MINUS    TokenType = "-"
+	BANG     TokenType = "!"
+	ASTERISK TokenType = "*"
+	SLASH    TokenType = "/"
+	EQ       TokenType = "=="
+	NOT_EQ   TokenType = "!="
+
+	LT TokenType = "<"
+	GT TokenType = ">"
 
 	// Delimeters
 	COMMA     TokenType = ","
@@ -43,4 +57,9 @@ const (
 	// Keywords
 	FUNCTION TokenType = "FUNCTION"
 	LET      TokenType = "LET"
+	TRUE     TokenType = "TRUE"
+	FALSE    TokenType = "FALSE"
+	IF       TokenType = "IF"
+	ELSE     TokenType = "ELSE"
+	RETURN   TokenType = "RETURN"
 )
