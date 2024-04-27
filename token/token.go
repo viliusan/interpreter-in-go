@@ -55,13 +55,13 @@ const (
 	RBRACE TokenType = "}"
 
 	// Keywords
-	FUNCTION TokenType = "FUNCTION"
-	LET      TokenType = "LET"
-	TRUE     TokenType = "TRUE"
-	FALSE    TokenType = "FALSE"
-	IF       TokenType = "IF"
-	ELSE     TokenType = "ELSE"
-	RETURN   TokenType = "RETURN"
+	FUNCTION TokenType = "function"
+	LET      TokenType = "let"
+	TRUE     TokenType = "true"
+	FALSE    TokenType = "false"
+	IF       TokenType = "if"
+	ELSE     TokenType = "else"
+	RETURN   TokenType = "return"
 )
 
 const (
